@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/screens/auth/login_screen.dart';
-import 'package:restaurant_app/screens/onboarding/onboarding_screen.dart';
+import 'package:restaurant_app/screens/onboarding/onboarding_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +16,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        inputDecorationTheme: const InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.all(Radius.circular(12))),
+        ),
       ),
-      home:  const LoginScreen(),
+      home:  const OnboardingHome(),
     );
   }
 }

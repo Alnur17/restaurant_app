@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:restaurant_app/constants/constant_data.dart';
+import 'package:restaurant_app/screens/auth/login_screen.dart';
 import 'package:restaurant_app/widgets/onboarding_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -75,6 +76,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
         ],
+      ),
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const LoginScreen(),
+            ),
+          );
+        },
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFFFF8333),
+            shape: BoxShape.circle,
+          ),
+          padding: const EdgeInsets.all(16),
+          child: const Text(
+            'Skip',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
       ),
     );
   }
