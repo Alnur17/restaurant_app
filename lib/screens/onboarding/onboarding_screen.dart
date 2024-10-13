@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:restaurant_app/constants/constant_data.dart';
-import 'package:restaurant_app/screens/auth/login_screen.dart';
+import 'package:restaurant_app/screens/auth/auth_landing_screen.dart';
 import 'package:restaurant_app/widgets/onboarding_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -82,7 +82,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const LoginScreen(),
+              builder: (context) => const AuthLandingScreen(),
             ),
           );
         },
@@ -101,3 +101,5 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 }
+
+

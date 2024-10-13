@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           fillColor: Colors.white,
           contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           border: OutlineInputBorder(
-              borderSide: BorderSide.none,
+              borderSide: BorderSide(width: 1,),
               borderRadius: BorderRadius.all(Radius.circular(12))),
         ),
       ),

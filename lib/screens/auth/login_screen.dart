@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/screens/auth/forgot_password_screen.dart';
 import 'package:restaurant_app/widgets/background_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -23,6 +24,7 @@ class LoginScreen extends StatelessWidget {
       body: BackgroundScreen(
         child: SizedBox(
           width: double.infinity,
+          height: double.infinity,
           child: Padding(
             padding: const EdgeInsets.only(left: 12, right: 12),
             child: SingleChildScrollView(
@@ -67,17 +69,17 @@ class LoginScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 12),
-                  const Text('Forgot password?'),
+                  GestureDetector(onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotPasswordScreen(),
+                      ),
+                    );
+                  },child: const Text('Forgot password?')),
                   const SizedBox(height: 12),
                   GestureDetector(
-                    onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => const LoginScreen(),
-                      //   ),
-                      // );
-                    },
+                    onTap: () {},
                     child: Container(
                       alignment: Alignment.center,
                       height: 50,
@@ -98,12 +100,49 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Divider(),
-                      Text('or continoue with'),
-                      Divider(),
+                      Expanded(child: Divider()),
+                      SizedBox(width: 8),
+                      Text('Or continue with'),
+                      SizedBox(width: 8),
+                      Expanded(child: Divider()),
                     ],
+                  ),
+                  const SizedBox(height: 16),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      decoration: BoxDecoration(
+                        //color: Color(0xFFFF8333),
+                        border: Border.all(
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(16),
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(16),
+                      child: Row(
+                        children: [
+                          Image.asset('assets/images/google.png'),
+                          const Spacer(),
+                          const Text('Continue with Google'),
+                          const Spacer(flex: 1),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Don’t have an account? '),
+                        Text('SignUp',style: TextStyle(color: Colors.green),),
+                      ],
+                    ),
                   ),
                 ],
               ),

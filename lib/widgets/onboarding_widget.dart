@@ -40,6 +40,7 @@ class OnboardingWidget extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'RFBarbariskarough2-Regular',
                     color: firstColor,
                   ),
                 ),
@@ -48,6 +49,7 @@ class OnboardingWidget extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'RFBarbariskarough2-Regular',
                     color: secondColor,
                   ),
                 ),
