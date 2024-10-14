@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(12))),
         ),
       ),
-      home:  const OnboardingHome(),
+      home: const OnboardingHome(),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/screens/auth/create_new_password_screen.dart';
+import 'package:restaurant_app/screens/auth/signup_screen.dart';
 import 'package:restaurant_app/widgets/background_screen.dart';
 
 import 'login_screen.dart';
@@ -22,15 +24,21 @@ class AuthLandingScreen extends StatelessWidget {
                 ),
                 Image.asset('assets/images/logo_Image2.png'),
                 const SizedBox(height: 12),
-                const Text('Let’s get started!',style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                ),),
+                const Text(
+                  'Let’s get started!',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 const SizedBox(height: 12),
-                const Text('Login to Stay healthy and fit',style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                ),),
+                const Text(
+                  'Login to Stay healthy and fit',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
@@ -61,13 +69,20 @@ class AuthLandingScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignupScreen(),
+                      ),
+                    );
+                  },
                   child: Container(
                     alignment: Alignment.center,
                     height: 50,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      border: Border.all(width: 1,color: Colors.orange),
+                      border: Border.all(width: 1, color: Colors.orange),
                       borderRadius: const BorderRadius.all(Radius.circular(12)),
                       color: Colors.transparent,
                     ),

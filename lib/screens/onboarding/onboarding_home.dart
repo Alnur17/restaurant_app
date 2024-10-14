@@ -16,7 +16,7 @@ class OnboardingHome extends StatelessWidget {
             children: [
               const SizedBox(height: 274),
               Image.asset(
-                'assets/images/login_image.png',
+                'assets/images/logo_image1.png',
                 fit: BoxFit.fitHeight,
                 height: 200,
               ),

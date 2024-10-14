@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/screens/auth/forgot_password_screen.dart';
-import 'package:restaurant_app/screens/auth/signup_screen.dart';
+import 'package:restaurant_app/screens/auth/login_screen.dart';
+import 'package:restaurant_app/screens/auth/step2.dart';
 import 'package:restaurant_app/widgets/background_screen.dart';
+import 'package:restaurant_app/widgets/signup_body_widget.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
         title: const Padding(
           padding: EdgeInsets.all(12.0),
           child: Text(
-            'Login Account',
+            'Create Account',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w700,
@@ -31,56 +36,27 @@ class LoginScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 58,
-                  ),
-                  Image.asset('assets/images/logo_image1.png'),
-                  const SizedBox(height: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text('Email Address'),
-                      const SizedBox(height: 12),
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: const InputDecoration(
-                          suffixIcon: Icon(Icons.email_outlined),
-                        ),
-                        validator: (value) {
-                          if (value?.isEmpty ?? true) {
-                            return 'Please enter your email...';
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(height: 12),
-                      const Text('Password'),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                    ),
-                    validator: (value) {
-                      if (value?.isEmpty ?? true) {
-                        return 'Please enter your password...';
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 12),
-                  GestureDetector(onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ForgotPasswordScreen(),
-                      ),
-                    );
-                  },child: const Text('Forgot password?')),
+                  const SignupBodyWidget(),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ForgotPasswordScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text('Forgot password?')),
                   const SizedBox(height: 12),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Step2(),
+                        ),
+                      );
+                    },
                     child: Container(
                       alignment: Alignment.center,
                       height: 50,
@@ -90,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                         color: Colors.orange,
                       ),
                       child: const Text(
-                        'Log In',
+                        'Sign Up',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
@@ -123,7 +99,7 @@ class LoginScreen extends StatelessWidget {
                           Radius.circular(16),
                         ),
                       ),
-                      padding: const Ed geInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: Row(
                         children: [
                           Image.asset('assets/images/google.png'),
@@ -134,24 +110,28 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 12),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const SignupScreen(),
+                          builder: (context) => const LoginScreen(),
                         ),
                       );
                     },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Don’t have an account? '),
-                        Text('SignUp',style: TextStyle(color: Colors.green),),
+                        Text('Already have an account? '),
+                        Text(
+                          'Login',
+                          style: TextStyle(color: Colors.green),
+                        ),
                       ],
                     ),
                   ),
+                  const SizedBox(height: 12),
                 ],
               ),
             ),
